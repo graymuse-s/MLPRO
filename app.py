@@ -26,6 +26,22 @@ from sklearn.metrics import (
 # PAGE CONFIGURATION
 # -----------------------------------------------------
 st.set_page_config(page_title="Hybrid Cyber Model", layout="wide")
+
+# Basic page setup
+st.set_page_config(page_title="My Streamlit App", page_icon="🌐", layout="wide")
+
+# Hide edit & GitHub icons but keep Share
+hide_streamlit_style = """
+    <style>
+    /* Hide "Edit" and "GitHub" buttons in the toolbar */
+    div[data-testid="stToolbar"] button[title="Edit source"], 
+    div[data-testid="stToolbar"] a[aria-label="View source on GitHub"] {
+        display: none !important;
+    }
+    </style>
+"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
 st.title("🛡 Hybrid Network Intrusion Analysis Dashboard")
 st.markdown("Explore your network traffic using **Random Forest** for attack classification "
             "and **Apriori** for association rule discovery.")
